@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pumpkin Seed Classifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+```
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #f6f9fc, #e9f0f7);
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px 35px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 12px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    input:focus {
+        border-color: #3498db;
+        outline: none;
+        box-shadow: 0 0 4px rgba(52,152,219,0.4);
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background: #27ae60;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #219150;
+    }
+
+    .result {
+        margin-top: 25px;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        background: #ecf9f1;
+        color: #1e8449;
+        border: 1px solid #2ecc71;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 12px;
+        color: #999;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎃 Pumpkin Seed Classifier</h1>
+    <div class="subtitle">Machine Learning Based Prediction</div>
+
+```
+<form action="/predict" method="post">
+
+    <label>Area</label>
+    <input type="number" step="any" name="Area" required>
+
+    <label>Perimeter</label>
+    <input type="number" step="any" name="Perimeter" required>
+
+    <label>Major Axis Length</label>
+    <input type="number" step="any" name="Major_Axis_Length" required>
+
+    <label>Solidity</label>
+    <input type="number" step="any" name="Solidity" required>
+
+    <label>Extent</label>
+    <input type="number" step="any" name="Extent" required>
+
+    <label>Roundness</label>
+    <input type="number" step="any" name="Roundness" required>
+
+    <label>Aspect Ration</label>
+    <input type="number" step="any" name="Aspect_Ration" required>
+
+    <label>Compactness</label>
+    <input type="number" step="any" name="Compactness" required>
+
+    <button class="btn" type="submit">🔍 Predict Seed Class</button>
+</form>
+
+{% if prediction_text %}
+    <div class="result">
+        Prediction: {{ prediction_text }}
+    </div>
+{% endif %}
+
+<footer>
+    Built with FastAPI • Machine Learning Demo
+</footer>
+```
+
+</div>
+
+</body>
+</html>
